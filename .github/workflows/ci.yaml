@@ -1,0 +1,21 @@
+name: Some tests
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "v*.*.*"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Docker meta
+        uses: zazuko/action-docker-meta@main
+        id: docker_meta
+        with:
+          images: ghcr.io/ludovicm67/test
+
+      - run: echo ${{ steps.docker_meta.outputs.tags }}
