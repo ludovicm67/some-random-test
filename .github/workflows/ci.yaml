@@ -21,4 +21,4 @@ jobs:
         with:
           images: $IMAGE
 
-      - run: echo "${{ IMAGE }}:${{ github.run_id	}},${{ steps.docker_meta.outputs.tags }}"
+      - run: echo "${IMAGE}:${{ github.run_id	}},${{ steps.docker_meta.outputs.tags }}"
