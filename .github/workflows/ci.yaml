@@ -18,4 +18,4 @@ jobs:
         with:
           images: ghcr.io/ludovicm67/test
 
-      - run: echo ${{ steps.docker_meta.outputs.tags }}
+      - run: echo "ghcr.io/ludovicm67/test:something,${{ steps.docker_meta.outputs.tags }}"
