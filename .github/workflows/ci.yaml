@@ -11,11 +11,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      IMAGE: ghcr.io/ludovicm67/test
+
     steps:
       - name: Docker meta
         uses: zazuko/action-docker-meta@main
         id: docker_meta
         with:
-          images: ghcr.io/ludovicm67/test
+          images: "${IMAGE}"
 
-      - run: echo "ghcr.io/ludovicm67/test:something,${{ steps.docker_meta.outputs.tags }}"
+      - run: echo "${IMAGE}:something,${{ steps.docker_meta.outputs.tags }}"
