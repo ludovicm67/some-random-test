@@ -20,5 +20,6 @@ jobs:
         id: docker_meta
         with:
           images: $IMAGE
+          include-pipeline-id: true
 
       - run: echo "${{ steps.docker_meta.outputs.tags }}"
